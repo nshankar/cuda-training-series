@@ -19,12 +19,6 @@ __global__ void stencil_1d(int *in, int *out) {
       temp[lindex + BLOCK_SIZE] = in[gindex + BLOCK_SIZE];
     }
 
-    // if (threadIdx.x == 1 && blockIdx.x == 1) {
-    //     for (int i = 0; i < BLOCK_SIZE; ++i) {
-    //         printf("Index %d, is: %d\n", i, temp[lindex]);
-    //     }
-    // }
-
     // Synchronize (ensure all the data is available)
     __syncthreads();
 
